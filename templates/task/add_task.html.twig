@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une tâche
+{% endblock %}
+
+{% block body %}
+	<main class="container-fluid">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{ form_end(form) }}
+    
+       {% for message in app.flashes('success') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('danger') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+</main>
+{% endblock %}

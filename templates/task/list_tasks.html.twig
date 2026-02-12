@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des tâches
+{% endblock %}
+
+{% block body %}
+<main class="container-fluid">
+	<h1>Liste des tâches</h1>
+	<ul>
+		{% for task in tasks %}
+			<li>{{ task.title }}
+				| {{ task.content }}
+				| {{ task.createdAt|date('Y-m-d')}}
+				| {{ task.expiredAt ? task.expiredAt|date('Y-m-d') : 'Pas de date d\'expiration' }}
+				| {{ task.status ? 'Terminée' : 'En cours' }}
+			</li>
+			{% else %}
+				<li>Aucune tâche trouvée.</li>
+			{% endfor %}
+		</ul>
+	</main>
+{% endblock %}

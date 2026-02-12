@@ -18,16 +18,18 @@ class TaskType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Saisir le titre de la tâche'
             ])
-            ->add('content', TextType::class,[
-                'label'=> 'Saisir le contenu de la tâche'
+            ->add('content', TextType::class, [
+                'label' => 'Saisir le contenu de la tâche'
             ])
             ->add('createdAt', DateType::class, [
-                'label'=> 'Saisir la date de création de la tâche'
+                'label' => 'Saisir la date de création de la tâche'
             ])
             ->add('expiredAt', null, [
                 'widget' => 'single_text',
             ])
-            ->add('save', SubmitType::class, ['label' => 'Ajouter une tâche']);;
+            ->add('save', SubmitType::class, [
+                'label' => 'Ajouter une tâche'
+            ]);;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
